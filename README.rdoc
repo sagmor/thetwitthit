@@ -1,0 +1,25 @@
+= TheTwittHit
+
+I'm a GTD fan and the idea is simple, i want my contacts to be able to post things they need me to do in my inbox and also post thing by my self when I'm away from my computer.
+
+So i integrated {The Hit List}[http://www.potionfactory.com/thehitlist/], the application i use to manage my todo list and {Twitter}[http://twitter.com/] and created TheTwittHit
+
+TheTwittHit is a simple script that collects twitts with the hashtag *#todo* from twitter that either were:
+
+ * Posted by you
+ * Replied to you
+ * Direct Messaged to you
+
+and add them to the application's inbox were i can review them later.
+
+== Installation
+
+TODO
+
+== Configuration
+
+TODO
+
+== Usage
+
+Once you had configured it simply {twitt using the #todo hashtag}[http://twitter.com/home?status=%23todo] and see how TheTwittHit do the rest
