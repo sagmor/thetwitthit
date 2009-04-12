@@ -17,6 +17,10 @@ EOF
       @config.save
     end
     
+    def config
+      @config
+    end
+    
     private
       def twitter
         @twitter ||= Twitter::Base.new(@config.auth)

@@ -1,6 +1,7 @@
 module TheTwittHit
   class Config
-    LOCATION = File.join(ENV['HOME'], '.the_twitt_hit.yml')
+    APP_SUPPORT = File.join(ENV['HOME'], "Library", "Application Support", "The Hit List")
+    CONFIG_FILE = File.join(APP_SUPPORT, 'thetwitthit.yml')
     CONSUMER_KEY = 'IvgtcoFEQaVcvckEjoQQ9w'
     CONSUMER_SECRET = 'mS7iOi5QvLqC4oMupeO1kbVXyngyDa5Jq80qVS9KI8Q'
     
@@ -22,7 +23,7 @@ module TheTwittHit
     end
     
     def save
-      File.open(LOCATION, 'w') do |f|
+      File.open(CONFIG_FILE, 'w') do |f|
         YAML::dump(@config, f)
       end
       
@@ -44,7 +45,7 @@ module TheTwittHit
     
     private
       def load
-        YAML::load_file(LOCATION)
+        YAML::load_file(CONFIG_FILE)
       end
   end
 end
