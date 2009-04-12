@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{thetwitthit}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sebastian Gamboa"]
@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.email = %q{me@sagmor.com}
   s.executables = ["thetwitthit"]
   s.extra_rdoc_files = ["bin/thetwitthit", "lib/thetwitthit/cli/helpers.rb", "lib/thetwitthit/cli.rb", "lib/thetwitthit/config.rb", "lib/thetwitthit/properties.rb", "lib/thetwitthit/version.rb", "lib/thetwitthit/worker.rb", "lib/thetwitthit.rb", "README.rdoc"]
-  s.files = ["bin/thetwitthit", "lib/thetwitthit/cli/helpers.rb", "lib/thetwitthit/cli.rb", "lib/thetwitthit/config.rb", "lib/thetwitthit/properties.rb", "lib/thetwitthit/version.rb", "lib/thetwitthit/worker.rb", "lib/thetwitthit.rb", "Rakefile", "README.rdoc", "thetwitthit.gemspec", "Manifest"]
+  s.files = ["bin/thetwitthit", "lib/thetwitthit/cli/helpers.rb", "lib/thetwitthit/cli.rb", "lib/thetwitthit/config.rb", "lib/thetwitthit/properties.rb", "lib/thetwitthit/version.rb", "lib/thetwitthit/worker.rb", "lib/thetwitthit.rb", "Manifest", "Rakefile", "README.rdoc", "thetwitthit.gemspec"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/SagMor/thetwitthit}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Thetwitthit", "--main", "README.rdoc"]

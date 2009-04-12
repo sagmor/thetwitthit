@@ -6,9 +6,9 @@ So i integrated {The Hit List}[http://www.potionfactory.com/thehitlist/], the ap
 
 TheTwittHit is a simple script that collects twitts with the hashtag *#todo* from twitter that either were:
 
- * Posted by you
- * Replied to you
- * Direct Messaged to you
+* Posted by you
+* Replied to you
+* Direct Messaged to you
 
 and add them to the application's inbox were i can review them later.
 

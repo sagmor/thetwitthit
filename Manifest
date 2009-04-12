@@ -6,7 +6,7 @@ lib/thetwitthit/properties.rb
 lib/thetwitthit/version.rb
 lib/thetwitthit/worker.rb
 lib/thetwitthit.rb
+Manifest
 Rakefile
 README.rdoc
 thetwitthit.gemspec
-Manifest
