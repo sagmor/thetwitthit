@@ -30,12 +30,12 @@ module TheTwittHit
       true
     end
     
-    def auth(force = true)
-      if @auth.nil?
+    def auth(force_auth = true, force_build = false)
+      if @auth.nil? || force_build
         @auth = Twitter::OAuth.new(CONSUMER_KEY,CONSUMER_SECRET)
         if @config[:access_token]
           @auth.authorize_from_access(@config[:access_token], @config[:access_secret])
-        elsif force
+        elsif force_auth
           raise "Not Authorized"
         end
       end
@@ -45,7 +45,11 @@ module TheTwittHit
     
     private
       def load
-        YAML::load_file(CONFIG_FILE)
+        if File.exists?(CONFIG_FILE)
+          YAML::load_file(CONFIG_FILE)
+        else
+          {}
+        end
       end
   end
 end

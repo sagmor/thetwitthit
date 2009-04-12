@@ -5,7 +5,7 @@ require 'rake'
 require 'echoe'
 require "lib/#{ProjectName}/version"
 
-Echoe.new(ProjectName, TheTwittList::Version) do |p|
+Echoe.new(ProjectName, TheTwittHit::Version) do |p|
   p.description    = "Fetches tasks from twitter and adds them to The Hit List.app"
   p.url            = "http://github.com/SagMor/#{ProjectName}"
   p.author         = "Sebastian Gamboa"

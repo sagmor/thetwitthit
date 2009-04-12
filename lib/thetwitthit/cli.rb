@@ -10,31 +10,8 @@ require 'daemons'
 HighLine.track_eof = false
 CLI_ROOT = File.expand_path(File.join(File.dirname(__FILE__), 'cli'))
 
-
-def daemon(mode)
-  Daemons.run_proc('TheTwittHit', :dir_mode => :normal,
-                                  :log_output => :true,
-                                  :dir => TheTwittHit::Config::APP_SUPPORT,
-                                  :ARGV => [mode]) do
-    
-    $running = true
-    Signal.trap("TERM") do 
-      $running = false
-    end
-    puts "#{Time.now} - Starting TheTwittHit"
-    
-    while($running) do
-      puts "#{Time.now} - Fetching last Tweets"
-      w = TheTwittHit::Worker.new
-      w.load
-      
-      sleep w.config.sleep_time
-    end
-    
-    puts "#{Time.now} - Stoping TheTwittHit"
-    
-  end
-end
+require CLI_ROOT + '/helpers'
+include TheTwittHit::CLI::Helpers
 
 Main {
   def run
@@ -45,14 +22,30 @@ Main {
   mode 'install' do
     description 'Installs and configure the application'
     def run
-      puts "TODO!"
+      puts "Installing TheTwittHit"
+      authorize
+      configure
+      start_on_login
+      
+      if agree("do you want to start TheTwittHit?")
+        daemon('start')
+      end
     end
   end
   
   mode 'uninstall' do
     description 'Uninstalls the application'
     def run
-      puts "TODO!"
+      if agree("Are you shure that you want to remove TheTwittHit?")
+        puts "Nooooo!!!, whyyyy, ok, lets do this!"
+        daemon('stop')
+        
+        File.delete(TheTwittHit::CLI::Helpers::PLIST_FILE)
+        File.delete(TheTwittHit::Config::CONFIG_FILE)
+        File.delete(File.join(TheTwittHit::Config::APP_SUPPORT,'TheTwittHit.output'))
+      else
+        puts "Uff, that was close..."
+      end
     end
   end
  
@@ -76,6 +69,4 @@ Main {
       daemon('restart')
     end
   end
-  
-  
 }
