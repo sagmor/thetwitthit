@@ -16,7 +16,7 @@ and add them to the application's inbox were i can review them later.
 
 Just open a terminal and write:
 
-  sudo gem install sagmor-thetwitthit --source http://gems.github.com
+  sudo gem install SagMor-thetwitthit --source http://gems.github.com
   thetwitthit install
 
 follow the instructions and you are ready to go
@@ -24,6 +24,10 @@ follow the instructions and you are ready to go
 == Usage
 
 Once you had configured it simply {twitt using the #todo hashtag}[http://twitter.com/home?status=%23todo] and see how TheTwittHit do the rest
+
+== Contact
+
+If you want to contact me my twitter account is {SagMor}[http://twitter.com/sagmor] and if there is something i should do you can {twitt it}[http://twitter.com/home?status=@sagmor%20%23todo] ;)
 
 == License
 
